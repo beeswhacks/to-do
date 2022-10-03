@@ -1,8 +1,31 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 2.5em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#header {
+  font-weight: bold;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+  padding-bottom: 4%;
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-top: 4%;
+}
+
+.list-container {
+  border-style: solid;
+  border-width: 0.5%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+.list-item {
+  border-style: solid;
+  border-width: 0.5%;
+  margin: 2%;
+  padding: 5%;
 }
