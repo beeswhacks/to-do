@@ -29,3 +29,37 @@ body {
   margin: 2%;
   padding: 5%;
 }
+
+.list-item-content {
+  display: inline;
+  margin-left: 2%
+}
+
+.checkmark {
+  display:inline-block;
+  width: 1em;
+  height:1em;
+  background: black;
+  border-radius:50%;
+  transform: rotate(45deg);
+}
+
+.checkmark:before{
+  content:"";
+  position: absolute;
+  width:0.2em;
+  height:0.1em;
+  background-color:#fff;
+  left:0.3em;
+  top:0.6em;
+}
+
+.checkmark:after{
+  content:"";
+  position: absolute;
+  width:0.1em;
+  height:0.5em;
+  background-color:#fff;
+  left:0.5em;
+  top:0.2em;
+}
