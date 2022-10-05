@@ -24,19 +24,26 @@ body {
 }
 
 .list-item {
+  align-items: center;
   border-style: solid;
   border-width: 0.5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   margin: 2%;
   padding: 5%;
 }
 
 .list-item-content {
   display: inline;
+  flex-grow: 1;
   margin-left: 2%
 }
 
 .checkmark {
   display:inline-block;
+  flex-grow: 0;
+  flex-shrink: 0;
   width: 1em;
   height:1em;
   background: black;
@@ -61,5 +68,63 @@ body {
   height:0.5em;
   background-color:#fff;
   left:0.5em;
+  top:0.2em;
+}
+
+.cross {
+  display:inline-block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 1em;
+  height:1em;
+  transform: rotate(45deg);
+}
+
+.cross:before{
+  content:"";
+  position: absolute;
+  width:0.6em;
+  height:0.1em;
+  background-color: black;
+  left:0.2em;
+  top:0.45em;
+}
+
+.cross:after{
+  content:"";
+  position: absolute;
+  width:0.1em;
+  height:0.6em;
+  background-color: black;
+  left:0.45em;
+  top:0.2em;
+}
+
+.add {
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 1em;
+  height:1em;
+  transform: translate(0);
+}
+
+.add:before{
+  content:"";
+  position: absolute;
+  width:0.6em;
+  height:0.1em;
+  background-color: black;
+  left:0.2em;
+  top:0.45em;
+}
+
+.add:after{
+  content:"";
+  position: absolute;
+  width:0.1em;
+  height:0.6em;
+  background-color: black;
+  left:0.45em;
   top:0.2em;
 }
