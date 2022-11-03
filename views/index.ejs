@@ -7,32 +7,25 @@
   <body>
     <div id="header">To-do list</div>
       <div class="list-container">
-        <div class="list-item">
-          <span class="checkmark"></span>
-          <span class="list-item-content-complete">All the people on the left the left the left the left the left the left the left</span>
-          <span class="cross"></span>
-        </div>
-        <div class="list-item">
-          <span class="checkmark"></span>
-          <span class="list-item-content-complete">Wap bam boogie</span>
-          <span class="cross"></span>
-        </div>
-        <div class="list-item">
-          <span class="checkmark"></span>
-          <span class="list-item-content-complete">All the people on the right</span>
-          <span class="cross"></span>
-        </div>
-        <div class="list-item">
-          <span class="unchecked-mark"></span>
-          <span class="list-item-content-incomplete">Boogaloo</span>
-          <span class="cross"></span>
-        </div>
+        <% tasks.forEach(function(task) { %>
+          <div class="list-item">
+            <% if (task.completed == true) { %>
+              <span class="checkmark-complete"></span>
+              <span class="list-item-content-complete"> <%= task.content %> </span>
+              <span class="cross"></span>
+            <% } else if (task.completed == false) { %>
+              <span class="checkmark-incomplete"></span>
+              <span class="list-item-content-incomplete"> <%= task.content %> </span>
+              <span class="cross"></span>
+            <% }; %>
+          </div>
+        <% }); %>
       </div>
     </div>
     <div class="list-container">
       <div class="list-item">
         <input type="text" class="new-item" placeholder="Enter a new item...">
-        <span class="add"></span>
+        <button type="submit" class="add-button">+</button>
       </div>
     </div>
   </body>
