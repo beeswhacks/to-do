@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var newTaskRouter = require('./routes/new_task');
 var deleteTaskRouter = require('./routes/delete_task');
+var toggleTaskRouter = require('./routes/toggle_complete');
 const Task = require('./models/task');
 
 var app = express();
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/new_task', newTaskRouter);
 app.use('/delete_task', deleteTaskRouter);
+app.use('/toggle_complete', toggleTaskRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -4,6 +4,7 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="/javascripts/delete_task.js" async></script>
+    <script src="/javascripts/toggle_complete.js" async></script>
   </head>
   <body>
     <div id="header">To-do list</div>
@@ -11,15 +12,19 @@
         <% tasks.forEach(function(task) { %>
           <div class="list-item">
             <% if (task.completed == true) { %>
-              <span class="checkmark-complete"></span>
+              <a href="" onclick="toggleComplete('<%= task.id %>')">
+                <span class="checkmark-complete"></span>
+              </a>
               <span class="list-item-content-complete"> <%= task.content %> </span>
-              <a href="#" onclick="deleteTask('<%= task.id %>')">
+              <a href="" onclick="deleteTask('<%= task.id %>')">
                 <span class="cross"></span>
               </a>
             <% } else if (task.completed == false) { %>
-              <span class="checkmark-incomplete"></span>
+              <a href="" onclick="toggleComplete('<%= task.id %>')">
+                <span class="checkmark-incomplete"></span>
+              </a>
               <span class="list-item-content-incomplete"> <%= task.content %> </span>
-              <a href="#" onclick="deleteTask('<%= task.id %>')">
+              <a href="" onclick="deleteTask('<%= task.id %>')">
                 <span class="cross"></span>
               </a>
             <% }; %>
