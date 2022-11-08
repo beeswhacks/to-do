@@ -6,9 +6,15 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var newTaskRouter = require('./routes/new_task');
+var deleteTaskRouter = require('./routes/delete_task');
+const Task = require('./models/task');
 
 var app = express();
+
+mongoose.connect('mongodb://localhost:27017/to-do').catch(error => console.error(error))
+
+mongoose.connection.on('error', err => console.error(err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,7 +27,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/new_task', newTaskRouter);
+app.use('/delete_task', deleteTaskRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -3,6 +3,7 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/delete_task.js" async></script>
   </head>
   <body>
     <div id="header">To-do list</div>
@@ -12,21 +13,27 @@
             <% if (task.completed == true) { %>
               <span class="checkmark-complete"></span>
               <span class="list-item-content-complete"> <%= task.content %> </span>
-              <span class="cross"></span>
+              <a href="#" onclick="deleteTask('<%= task.id %>')">
+                <span class="cross"></span>
+              </a>
             <% } else if (task.completed == false) { %>
               <span class="checkmark-incomplete"></span>
               <span class="list-item-content-incomplete"> <%= task.content %> </span>
-              <span class="cross"></span>
+              <a href="#" onclick="deleteTask('<%= task.id %>')">
+                <span class="cross"></span>
+              </a>
             <% }; %>
           </div>
         <% }); %>
       </div>
     </div>
     <div class="list-container">
-      <div class="list-item">
-        <input type="text" class="new-item" placeholder="Enter a new item...">
-        <button type="submit" class="add-button">+</button>
+      <form action="/new_task" method="post">
+        <div class="list-item">
+          <input type="text" class="new-item" name="newTaskContent" placeholder="Enter a new item...">
+          <button type="submit" class="add-button">+</button>
       </div>
-    </div>
+    </form>
+  </div>
   </body>
 </html>
