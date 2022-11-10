@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var dotenv = require('dotenv');
+
+dotenv.config();
+console.log(process.env);
 
 var indexRouter = require('./routes/index');
 var newTaskRouter = require('./routes/new_task');
@@ -13,7 +17,7 @@ const Task = require('./models/task');
 
 var app = express();
 
-mongoose.connect('mongodb+srv://jackpreston:2Gy6P4upiYSGRL52@cluster0.qbmqh8s.mongodb.net/?retryWrites=true&w=majority').catch(error => console.error(error))
+mongoose.connect(process.env.MONGODB_URI).catch(error => console.error(error))
 
 mongoose.connection.on('error', err => console.error(err));
 
