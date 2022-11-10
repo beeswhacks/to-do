@@ -1,1 +1,0 @@
-web: ./bin/fixie-wrench $localPort:$host:$remotePort & npm start
