@@ -1,1 +1,1 @@
-web: ./bin/fixie-wrench LOCAL_PORT:REMOTE_HOST:REMOTE_PORT & npm start
+web: ./bin/fixie-wrench $localPort:$host:$remotePort & npm start
