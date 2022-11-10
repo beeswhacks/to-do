@@ -13,7 +13,7 @@ const Task = require('./models/task');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/to-do').catch(error => console.error(error))
+mongoose.connect('mongodb+srv://jackpreston:2Gy6P4upiYSGRL52@cluster0.qbmqh8s.mongodb.net/?retryWrites=true&w=majority').catch(error => console.error(error))
 
 mongoose.connection.on('error', err => console.error(err));
 
