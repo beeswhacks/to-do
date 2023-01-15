@@ -1,7 +1,7 @@
 # to-do
 A simple to-do list app.
 
-Can be viewed [here](https://desolate-beach-24468.herokuapp.com/) (best viewed on mobile).
+Can be viewed [here](https://desolate-beach-24468.herokuapp.com/) (best viewed on mobile - use dev tools if you're on a computer).
 
 <img src="https://user-images.githubusercontent.com/90331266/209668068-00c3cc82-aafd-489e-aa82-9f94fcf44198.png" width="300">
 
